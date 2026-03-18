@@ -1,0 +1,29 @@
+<h2>🏦 Mini Banking App</h2>
+
+<button onclick="getBalance()">Check Balance</button>
+<button onclick="deposit()">Deposit ₹1000</button>
+<button onclick="withdraw()">Withdraw ₹500</button>
+
+<p id="result"></p>
+
+<script>
+async function getBalance() {
+  const res = await fetch("http://localhost:5127/api/bank/balance")
+  const data = await res.text()
+  document.getElementById("result").innerText = "Balance: ₹" + data
+}
+
+async function deposit() {
+  await fetch("http://localhost:5127/api/bank/deposit?amount=1000", {
+    method: "POST"
+  })
+  getBalance()
+}
+
+async function withdraw() {
+  await fetch("http://localhost:5127/api/bank/withdraw?amount=500", {
+    method: "POST"
+  })
+  getBalance()
+}
+</script>
