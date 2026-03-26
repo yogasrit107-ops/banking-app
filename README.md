@@ -48,7 +48,7 @@ Open `frontend/index.html` using Live Server
 
 ## 📸 Screenshot
 
-(Add your screenshot here later)
+![App Screenshot](frontend/ba6.png)
 
 ---
 
